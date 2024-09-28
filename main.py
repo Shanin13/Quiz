@@ -14,12 +14,12 @@ class question_display:
 
     def question_next(self):
 
-        if self.q_no < len(self.ques_list):
+        if self.q_no+1 < len(self.ques_list):
 
             ques = self.ques_list[self.q_no]
             self.q_no += 1
 
-            ans = input(f"Q.{self.q_no} :{ques.qu} (T/F)?")
+            ans = input(f"Q.{self.q_no} :{ques.qu} (True/False)?").lower()
 
             if ans == ques.a:
                 print("Correct answer")
@@ -31,7 +31,7 @@ class question_display:
                 print(f"Score : {self.score} /{self.q_no}")
                 print("\n")
         else:
-            print("Qioz fininshed")
+            print("Quiz fininshed")
 
 q_list = []
 
